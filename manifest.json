@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Dual Subtitles",
+  "version": "1.0",
+  "description": "Dual Subtitles where possible",
+  "icons": {
+    "48": "src/icons/border-48.png"
+  },
+  "permissions": ["activeTab", "storage", "http://localhost/*"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.francaisfacile.rfi.fr/*",
+        "*://*.youtube.com/*"
+      ],
+      "js": ["dist/content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "src/popup.html",
+    "default_icon": "src/icons/border-48.png"
+  }
+}
